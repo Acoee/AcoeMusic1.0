@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/local_music_play_control_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_30"
+        android:background="@android:color/black">
+
+        <TextView
+            android:id="@+id/local_music_play_mode_txt"
+            style="@style/normal_text_style"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/white"
+            android:text="随机播放全部"/>
+
+        <ImageView
+            android:id="@+id/local_music_paly_mode_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/local_music_play_mode_txt"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/play_mode_random"/>
+
+    </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/local_music_list"
+        style="@style/pull_listview_style"
+        android:layout_below="@+id/local_music_play_control_rl"
+        android:layout_marginRight="35dp"
+        android:divider="@color/line_color"
+        android:dividerHeight="1px"
+        android:listSelector="@drawable/white_button_style" />
+
+    <TextView
+        android:id="@+id/local_music_selected_txt"
+        android:layout_width="70.0dip"
+        android:layout_height="70.0dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/sidebar_background"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="30.0dip"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/local_music_sidebar_ll"
+        android:layout_width="35dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/local_music_play_control_rl"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical" >
+
+        <com.app.music.view.SideBar
+            android:id="@+id/local_music_sidebar"
+            android:layout_width="30.0dip"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+
+</RelativeLayout>

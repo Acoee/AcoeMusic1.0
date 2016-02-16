@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:border="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/center_tob_bg">
+
+                <com.app.music.view.CircleImageView
+                    android:id="@+id/user_center_photo_imageview"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/default_user_photo"
+                    android:layout_marginTop="50dp"
+                    border:border_color="@android:color/white"
+                    border:border_width="1px"/>
+                
+                <TextView
+                    android:id="@+id/user_center_nickname_textview"
+                    style="@style/normal_text_style_large"
+                    android:layout_toRightOf="@+id/user_center_photo_imageview"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignTop="@+id/user_center_photo_imageview"
+                    android:drawableRight="@drawable/user_gender_female"
+                    android:drawablePadding="5dp"
+                    android:textColor="@android:color/white"
+                    android:text="白渃"/>
+
+                <TextView
+                    android:id="@+id/user_center_sign_textview"
+                    style="@style/normal_text_style"
+                    android:layout_below="@+id/user_center_nickname_textview"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignLeft="@+id/user_center_nickname_textview"
+                    android:singleLine="false"
+                    android:maxLines="2"
+                    android:textColor="@android:color/white"
+                    android:text="时间等不来你想要的，却会冲淡你想留住的"/>
+                
+                <TextView
+                    android:id="@+id/user_center_record_textview"
+                    style="@style/normal_text_style_small"
+                    android:layout_alignParentBottom="true"
+                    android:drawableLeft="@drawable/user_record_red"
+                    android:drawablePadding="5dp"
+                    android:textColor="@android:color/white"
+                    android:text="等级    0级  |  播放    102"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/user_local_music_rl"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/transparent_button_style">
+                <TextView
+                    android:id="@+id/user_local_music_textview"
+                    style="@style/normal_text_style"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:drawableLeft="@drawable/user_local_music"
+                    android:drawablePadding="5dp"
+                    android:text="本地音乐"/>
+
+                <TextView
+                    android:id="@+id/user_local_music_amount_textview"
+                    style="@style/normal_text_style_gray_small"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:drawableRight="@drawable/arrow_right_icon"
+                    android:drawablePadding="5dp"
+                    android:text="99首"/>
+
+                <ImageView
+                    style="@style/line_horizontal_style"
+                    android:layout_below="@+id/user_local_music_textview"
+                    android:layout_marginLeft="40dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/user_favorite_music_rl"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/transparent_button_style">
+                <TextView
+                    android:id="@+id/user_favorite_music_textview"
+                    style="@style/normal_text_style"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:drawableLeft="@drawable/user_favorite_music"
+                    android:drawablePadding="5dp"
+                    android:text="我喜欢"/>
+
+                <TextView
+                    android:id="@+id/user_favorite_music_amount_textview"
+                    style="@style/normal_text_style_gray_small"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:drawableRight="@drawable/arrow_right_icon"
+                    android:drawablePadding="5dp"
+                    android:text="12首"/>
+
+                <ImageView
+                    style="@style/line_horizontal_style"
+                    android:layout_below="@+id/user_favorite_music_textview"
+                    android:layout_marginLeft="40dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/user_download_music_rl"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/transparent_button_style">
+                <TextView
+                    android:id="@+id/user_download_music_textview"
+                    style="@style/normal_text_style"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:drawableLeft="@drawable/user_download_music"
+                    android:drawablePadding="5dp"
+                    android:text="下载"/>
+
+                <TextView
+                    android:id="@+id/user_download_music_amount_textview"
+                    style="@style/normal_text_style_gray_small"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:drawableRight="@drawable/arrow_right_icon"
+                    android:drawablePadding="5dp"
+                    android:text="23首"/>
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/line_horizontal_style"
+                android:background="@color/main_bg_color"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/normal_text_style_small"
+                    android:layout_height="30dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:text="我的歌单"/>
+
+                <ImageView
+                    style="@style/line_horizontal_style"
+                    android:contentDescription="@string/contentDescription" />
+
+                <com.fortysevendeg.swipelistview.SwipeListView
+                    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/user_center_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:listSelector="#00000000"
+                    swipe:swipeActionLeft="reveal"
+                    swipe:swipeActionRight="reveal"
+                    swipe:swipeAnimationTime="2000"
+                    swipe:swipeBackView="@+id/back"
+                    swipe:swipeCloseAllItemsWhenMoveList="true"
+                    swipe:swipeFrontView="@+id/front"
+                    swipe:swipeMode="both"
+                    swipe:swipeOffsetLeft="0dp"
+                    swipe:swipeOffsetRight="0dp"
+                    swipe:swipeOpenOnLongPress="false"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/user_create_list_textview"
+                    style="@style/normal_text_style"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:drawableLeft="@drawable/user_add_list"
+                    android:text="新建歌单" />
+
+                <ImageView
+                    style="@style/line_horizontal_style"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

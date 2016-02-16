@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/music_list_item_no_textview"
+        style="@style/normal_text_style"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="@string/number_1" />
+
+    <TextView
+        android:id="@+id/music_list_item_title_textview"
+        style="@style/normal_text_style"
+        android:layout_toRightOf="@+id/music_list_item_no_textview"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/music_list_item_title_default_text" />
+
+    <ImageView
+        android:id="@+id/music_list_item_icon_imageview"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_below="@+id/music_list_item_title_textview"
+        android:background="@drawable/music_file"
+        android:layout_alignLeft="@+id/music_list_item_title_textview"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/contentDescription" />
+
+    <TextView
+        android:id="@+id/music_list_item_artist"
+        style="@style/normal_text_style_gray"
+        android:layout_toRightOf="@+id/music_list_item_icon_imageview"
+        android:layout_alignBottom="@+id/music_list_item_icon_imageview"
+        android:layout_marginLeft="3dp"
+        android:textSize="@dimen/dimen_12"
+        android:text="@string/music_list_item_artist_default_text"/>
+    
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/extend_menu_button_style"/>
+
+    <ImageView
+        style="@style/line_horizontal_style"
+        android:layout_below="@+id/music_list_item_icon_imageview"/>
+
+</RelativeLayout>

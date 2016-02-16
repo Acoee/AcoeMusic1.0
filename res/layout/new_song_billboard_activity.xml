@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg_color">
+
+    <include layout="@layout/title_bar_view"/>
+
+    <ImageView
+        android:id="@+id/album_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="150dip"
+        android:background="@drawable/new_song_banner"
+        android:layout_marginTop="@dimen/title_height"/>
+
+    <Button
+        android:id="@+id/paly_all_button"
+        android:layout_width="110dip"
+        android:layout_height="110dip"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/album_imageview"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/play_all_icon"/>
+
+    <Button
+        android:layout_width="30dip"
+        android:layout_height="110dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/paly_all_button"
+        android:layout_marginRight="20dip"
+        android:background="@drawable/add_as_list_icon"/>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/listview"
+        style="@style/pull_listview_style"
+        android:layout_below="@+id/album_imageview"
+        android:divider="@color/line_color"
+        android:dividerHeight="1px"/>
+
+</RelativeLayout>

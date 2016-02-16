@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/title_ll"
+        layout="@layout/title_bar_view"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_ll"
+        android:layout_above="@+id/line_imageview">
+    </FrameLayout>
+    
+
+
+    <ImageView
+        android:id="@+id/line_imageview"
+        style="@style/line_horizontal_style"
+        android:layout_above="@+id/bottom_nav_container_ll" />
+
+    <LinearLayout
+        android:id="@+id/bottom_nav_container_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:background="@color/nav_bg_color"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/main_nav_center_rl"
+            style="@style/nav_rl_style" >
+
+            <ImageView
+                style="@style/nav_icon_style"
+                android:background="@drawable/nav_center_selected"/>
+
+            <TextView
+                style="@style/nav_text_style"
+                android:textColor="@color/main_color"
+                android:text="@string/nav_center_text"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_nav_current_rl"
+            style="@style/nav_rl_style" >
+
+            <ImageView
+                style="@style/nav_icon_style"
+                android:background="@drawable/nav_current_unselected"/>
+
+            <TextView
+                style="@style/nav_text_style"
+                android:text="@string/nav_current_text"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_nav_list_rl"
+            style="@style/nav_rl_style" >
+
+            <ImageView
+                style="@style/nav_icon_style"
+                android:background="@drawable/nav_list_unselected"/>
+
+            <TextView
+                style="@style/nav_text_style"
+                android:text="@string/nav_list_text"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_nav_media_rl"
+            style="@style/nav_rl_style" >
+
+            <ImageView
+                style="@style/nav_icon_style"
+                android:background="@drawable/nav_media_unselected"/>
+
+            <TextView
+                style="@style/nav_text_style"
+                android:text="@string/nav_media_text"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="@dimen/title_height"
+    android:background="@android:color/white">
+
+    <Button
+        android:id="@+id/title_back_button"
+        android:layout_width="41dip"
+        android:layout_height="match_parent"
+        android:background="@drawable/title_back_green_icon"/>
+
+    <TextView
+        android:id="@+id/title_textview"
+        style="@style/title_text_style_main"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/title_right_button"
+        android:layout_width="@dimen/title_button_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@anim/music_playing" />
+
+</RelativeLayout>

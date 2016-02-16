@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dip"
+    android:paddingRight="20dip"
+    android:paddingTop="10dip"
+    android:paddingBottom="10dip"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/media_list_item_imageview"
+        android:layout_width="60dip"
+        android:layout_height="60dip"/>
+
+    <TextView
+        android:id="@+id/media_list_item_name_textview"
+        style="@style/normal_text_style"
+        android:layout_alignTop="@+id/media_list_item_imageview"
+        android:layout_toRightOf="@+id/media_list_item_imageview"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:text="新歌榜"/>
+
+    <TextView
+        android:id="@+id/media_list_item_desc_textview"
+        style="@style/normal_text_style_gray_small"
+        android:layout_alignLeft="@+id/media_list_item_name_textview"
+        android:layout_below="@+id/media_list_item_name_textview"
+        android:layout_marginTop="8dip"
+        android:text="每周最新歌曲"/>
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_bg_color">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.app.music.view.AdViewPager
+            android:id="@+id/media_ad_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="135dip"></com.app.music.view.AdViewPager>
+
+        <LinearLayout
+            android:id="@+id/media_oval_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="12dip"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="6dip"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+    </FrameLayout>
+    
+    <com.app.music.view.SearchEditText
+        android:id="@+id/media_search_edittext"
+        style="@style/normal_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_margin="10dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:hint="@string/search_text"
+        android:drawableLeft="@drawable/edit_search_icon"
+        android:drawablePadding="5dip"
+        android:background="@android:color/white"/>
+
+    <ListView
+        android:id="@+id/media_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/line_color"
+        android:dividerHeight="1px"></ListView>
+
+</LinearLayout>

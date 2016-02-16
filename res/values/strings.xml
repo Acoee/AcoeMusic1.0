@@ -1,0 +1,40 @@
+<resources>
+    <!-- 通用 -->
+    <string name="app_name">倾悦</string>
+    <string name="lyric">眉间雪</string>
+    <string name="last_song">上一首</string>
+    <string name="next_song">下一首</string>
+    <string name="play_model">播放模式</string>
+    <string name="lyric_show">歌词显示</string>
+    <string name="menu_m">菜单</string>
+    <string name="menu_q">查询菜单</string>
+    <string name="menu_az">Az</string>
+    <string name="contentDescription">contentDescription</string>
+    <string name="music_info">音乐信息</string>
+    <string name="local_music">本地歌曲</string>
+    <string name="search_hint">搜搜你想找的歌曲~</string>
+    <string name="music_title">未知</string>
+    <string name="music_artist">未知艺术家</string>
+    <string name="number_1">01</string>
+    <string name="duration_text">5:29</string>
+    <string name="search_text">搜索</string>
+    <!-- 主界面标题 -->
+    <string name="main_title_center_text">个人中心</string>
+    <string name="main_title_current_text">当前歌曲</string>
+    <string name="main_title_list_text">播放列表</string>
+    <string name="main_title_media_text">媒体库</string>
+    <!-- 歌曲列表item -->
+    <string name="music_list_item_title_default_text">未知</string>
+    <string name="music_list_item_artist_default_text">未知艺术家</string>
+    <!-- 导航 -->
+    <string name="nav_center_text">个人中心</string>
+    <string name="nav_current_text">当前音乐</string>
+    <string name="nav_list_text">播放列表</string>
+    <string name="nav_media_text">媒体库</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <!-- 个人中心 -->
+
+</resources>
