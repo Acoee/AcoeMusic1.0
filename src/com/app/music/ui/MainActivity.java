@@ -1,4 +1,4 @@
-package com.app.music.frame;
+package com.app.music.ui;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -9,11 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.app.music.frame.base.BaseTitleFragmentActivity;
-import com.app.music.frame.center.CenterFragment;
-import com.app.music.frame.current.CurrentFragment;
-import com.app.music.frame.media.MediaFragment;
-import com.app.music.frame.playlist.PlaylistFragment;
+import com.app.music.ui.base.BaseTitleFragmentActivity;
+import com.app.music.ui.center.CenterFragment;
+import com.app.music.ui.current.CurrentFragment;
+import com.app.music.ui.media.MediaFragment;
+import com.app.music.ui.playlist.PlaylistFragment;
 
 import cn.com.acoe.app.music.R;
 

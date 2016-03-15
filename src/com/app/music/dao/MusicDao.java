@@ -12,7 +12,21 @@ import java.util.ArrayList;
  */
 public class MusicDao extends BaseDao {
 
+    /**
+     * 获取本地音乐列表
+     * @param context
+     * @return
+     */
     public static ArrayList<Mp3Bean> getLocalMusic(Context context) {
         return AcoeMusicUtils.getMp3Beans(context);
+    }
+
+    /**
+     * 获取本地音乐数量
+     * @param context
+     * @return
+     */
+    public static String getLocalMusicAmount(Context context) {
+        return  AcoeMusicUtils.getLocalMusicAmount(context);
     }
 }

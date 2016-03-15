@@ -20,11 +20,17 @@ public class LocalMusicDataMgr extends AbstractDataManager{
 
     public static final int LOCAL_MUSIC_QUERY_SUCCESS = 10001; // 本地音乐查询成功
     public static final int LOCAL_MUSIC_QUERY_FAILURE = 10002; // 本地音乐查询失败
+    public static final int LOCAL_MUSIC_AMOUNT_QUERY_SUCCESS = 10003; // 本地音乐数量查询成功
+    public static final int LOCAL_MUSIC_AMOUNT_QUERY_FAILURE = 10004; // 本地音乐数量查询失败
 
     public LocalMusicDataMgr(DataManagerCallBack callBack) {
         super(callBack);
     }
 
+    /**
+     * 获取本地音乐列表
+     * @param context
+     */
     public void getLocalMusic(final Context context) {
         WorkThreadExecutor.getInstance().execute(new Runnable() {
             @Override
@@ -34,6 +40,25 @@ public class LocalMusicDataMgr extends AbstractDataManager{
                     listener.sendMessage(NetSourceListener.WHAT_ERROR, LOCAL_MUSIC_QUERY_FAILURE, result, "获取本地音乐失败");
                 } else {
                     listener.sendMessage(NetSourceListener.WHAT_SUCCESS, LOCAL_MUSIC_QUERY_SUCCESS, result, "获取本地音乐成功");
+                }
+            }
+        });
+    }
+
+    /**
+     * 获取本地音乐数量
+     * @param context
+     * @return
+     */
+    public void getLocalMusicAmount(final Context context) {
+        WorkThreadExecutor.getInstance().execute(new Runnable() {
+            @Override
+            public void run() {
+                String result = MusicDao.getLocalMusicAmount(context);
+                if (result == null) {
+                    listener.sendMessage(NetSourceListener.WHAT_ERROR, LOCAL_MUSIC_AMOUNT_QUERY_FAILURE, result, "获取本地音乐数量失败");
+                } else {
+                    listener.sendMessage(NetSourceListener.WHAT_SUCCESS, LOCAL_MUSIC_AMOUNT_QUERY_SUCCESS, result, "获取本地音乐数量成功");
                 }
             }
         });

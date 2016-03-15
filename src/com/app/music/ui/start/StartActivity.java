@@ -1,4 +1,4 @@
-package com.app.music.frame.start;
+package com.app.music.ui.start;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.app.music.frame.MainActivity;
-import com.app.music.frame.base.BaseActivity;
+import com.app.music.ui.MainActivity;
+import com.app.music.ui.base.BaseActivity;
 
 import cn.com.acoe.app.music.R;
 

@@ -199,7 +199,7 @@ public class AdViewPager extends ViewPager {
     private static class CycleHandler extends Handler {
     	private WeakReference<AdViewPager> wk; // 使用弱引用，避免Handler泄露
     	public static int PAGE = 9527;
-    	
+
     	protected CycleHandler(WeakReference<AdViewPager> wk) {
     		this.wk = wk;
     	}

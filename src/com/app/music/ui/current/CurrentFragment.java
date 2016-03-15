@@ -1,4 +1,4 @@
-package com.app.music.frame.current;
+package com.app.music.ui.current;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 
 import com.app.music.adapter.ChoosePageAdapter;
-import com.app.music.frame.base.BaseFragment;
+import com.app.music.ui.base.BaseFragment;
 
 import cn.com.acoe.app.music.R;
 

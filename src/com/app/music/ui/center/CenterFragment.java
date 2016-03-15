@@ -1,4 +1,4 @@
-package com.app.music.frame.center;
+package com.app.music.ui.center;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.app.music.frame.base.BaseFragment;
+import com.app.music.common.SystemUtils;
+import com.app.music.manager.LocalMusicDataMgr;
+import com.app.music.ui.base.BaseFragment;
 import com.fortysevendeg.swipelistview.SwipeListView;
 
 import cn.com.acoe.app.music.R;
@@ -19,6 +21,7 @@ import cn.com.acoe.app.music.R;
  */
 public class CenterFragment extends BaseFragment implements View.OnClickListener{
     private static final String TAG = "CenterFragment";
+    private LocalMusicDataMgr localMusicDataMgr;
     // 控件
     private RelativeLayout rlLocalMusic, rlFavoriteMusic, rlDownloadMusic;
     private TextView txtUserName, txtUserAutograph, txtRecordInfo, txtLocalNum, txtFavoriteNum, txtDownloadNum, txtCreateList;
@@ -35,12 +38,14 @@ public class CenterFragment extends BaseFragment implements View.OnClickListener
         super.onActivityCreated(savedInstanceState);
 
         if (rlLocalMusic == null) initUI();
+        loadData();
     }
 
     /**
      * 初始化界面
      */
     private void initUI() {
+        localMusicDataMgr = new LocalMusicDataMgr(this);
         // 初始化控件
     	this.rlLocalMusic = (RelativeLayout) this.context.findViewById(R.id.user_local_music_rl);
         this.rlFavoriteMusic = (RelativeLayout) this.context.findViewById(R.id.user_favorite_music_rl);
@@ -84,4 +89,24 @@ public class CenterFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
+    /**
+     * 加载数据
+     */
+    private void loadData() {
+        this.localMusicDataMgr.getLocalMusicAmount(context);
+    }
+
+    @Override
+    public void onBack(int what, int arg1, int arg2, Object obj) {
+        super.onBack(what, arg1, arg2, obj);
+        switch (what) {
+            case LocalMusicDataMgr.LOCAL_MUSIC_AMOUNT_QUERY_SUCCESS:
+                String result = (String) obj;
+                txtLocalNum.setText(result);
+                break;
+            case LocalMusicDataMgr.LOCAL_MUSIC_AMOUNT_QUERY_FAILURE:
+                SystemUtils.ToastShow(obj.toString(), false);
+                break;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package com.app.music.frame.media;
+package com.app.music.ui.media;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +9,7 @@ import com.app.music.adapter.SongListAdapter;
 import com.app.music.common.SystemUtils;
 import com.app.music.common.http.TecentMusicResult;
 import com.app.music.entity.QQMusicBean;
-import com.app.music.frame.base.BaseTitleActivity;
+import com.app.music.ui.base.BaseTitleActivity;
 import com.app.music.manager.TecentMusicDataMgr;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import cn.com.acoe.app.music.R;
 
 /**
- * 总歌榜界面
- * Created by Acoe on 2016/2/16.
+ * 新歌榜界面
+ * Created by Acoe on 2016/2/2.
  */
-public class AllSongBillboardActivity extends BaseTitleActivity {
-    private static String TAG = "AllSongBillboardActivity";
+public class NewSongBillboardActivity extends BaseTitleActivity {
+    private static String TAG = "NewSongBillboardActivity";
     private TecentMusicDataMgr musicDataMgr;
     // 控件
     private ImageView imgAlbum;
@@ -49,12 +49,11 @@ public class AllSongBillboardActivity extends BaseTitleActivity {
     private void initUI() {
         musicDataMgr = new TecentMusicDataMgr(this);
         // 设置标题
-        setTitleText("总歌榜");
+        setTitleText("新歌榜");
         setRightButtonVisible(View.GONE);
         // 控件
         imgAlbum = (ImageView) findViewById(R.id.album_imageview);
         listView = (PullToRefreshListView) findViewById(R.id.listview);
-        imgAlbum.setBackgroundResource(R.drawable.all_song_banner);
         // 初始化列表
         adapter = new SongListAdapter();
         listView.setAdapter(adapter);
@@ -79,7 +78,7 @@ public class AllSongBillboardActivity extends BaseTitleActivity {
      * 加载数据
      */
     private void loadData() {
-        musicDataMgr.allSongQuery();
+        musicDataMgr.newSongQuery();
     }
 
     @Override
@@ -87,14 +86,15 @@ public class AllSongBillboardActivity extends BaseTitleActivity {
         super.onBack(what, arg1, arg2, obj);
         listView.onRefreshComplete();
         switch (what) {
-            case TecentMusicDataMgr.TECENT_MUSIC_ALL_SONG_QUERY_SUCESS:
+            case TecentMusicDataMgr.TECENT_MUSIC_NEW_SONG_QUERY_SUCESS:
                 TecentMusicResult<QQMusicBean> result = (TecentMusicResult<QQMusicBean>) obj;
                 datas = result.songlist;
                 adapter.updateListView(datas);
                 break;
-            case TecentMusicDataMgr.TECENT_MUSIC_ALL_SONG_QUERY_FAILURE:
+            case TecentMusicDataMgr.TECENT_MUSIC_NEW_SONG_QUERY_FAILURE:
                 SystemUtils.ToastShow(obj.toString(), false, isVisible);
                 break;
         }
     }
+
 }

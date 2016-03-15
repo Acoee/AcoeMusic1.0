@@ -1,4 +1,4 @@
-package com.app.music.frame.base;
+package com.app.music.ui.base;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

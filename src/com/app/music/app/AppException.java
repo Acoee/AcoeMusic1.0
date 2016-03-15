@@ -16,7 +16,7 @@ import org.apache.http.HttpException;
 
 import com.app.music.common.mail.MailSenderInfo;
 import com.app.music.common.mail.SimpleMailSender;
-import com.app.music.frame.start.StartActivity;
+import com.app.music.ui.start.StartActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

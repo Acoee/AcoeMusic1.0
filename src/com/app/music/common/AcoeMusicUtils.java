@@ -14,6 +14,11 @@ import java.util.ArrayList;
  * Created by Administrator on 2015/9/9.
  */
 public class AcoeMusicUtils {
+    /**
+     * 获取本地音乐
+     * @param context
+     * @return
+     */
     public static ArrayList<Mp3Bean> getMp3Beans(Context context) {
         Cursor cursor = context.getContentResolver().query(
                 Media.EXTERNAL_CONTENT_URI, null, null, null,
@@ -103,5 +108,48 @@ public class AcoeMusicUtils {
             cursor.close();
         }
         return datas;
+    }
+
+    /**
+     * 获取本地音乐数量
+     * @param context
+     * @return
+     */
+    public static String getLocalMusicAmount(Context context) {
+        int musicAmount = 0;
+        Cursor cursor = context.getContentResolver().query(
+                Media.EXTERNAL_CONTENT_URI, null, null, null,
+                Media.DEFAULT_SORT_ORDER);
+        for (int i = 0; i < cursor.getCount(); i++) {
+            cursor.moveToNext();
+            String url = cursor.getString(cursor
+                    .getColumnIndex(Media.DATA)); // 文件路径
+            int isMusic = cursor.getInt(cursor
+                    .getColumnIndex(Media.IS_MUSIC)); // 是否为音乐
+            if (isMusic != 0 && (url.endsWith(".mp3") || url.endsWith(".awv"))) { // 只把音乐添加到集合当中
+                musicAmount++;
+            }
+        }
+        if (!cursor.isClosed()) {
+            cursor.close();
+        }
+        cursor = context.getContentResolver().query(
+                Media.INTERNAL_CONTENT_URI, null, null, null,
+                Media.DEFAULT_SORT_ORDER);
+        for (int i = 0; i < cursor.getCount(); i++) {
+            cursor.moveToNext();
+            String url = cursor.getString(cursor
+                    .getColumnIndex(Media.DATA)); // 文件路径
+            int isMusic = cursor.getInt(cursor
+                    .getColumnIndex(Media.IS_MUSIC)); // 是否为音乐
+
+            if (isMusic != 0  && (url.endsWith(".mp3") || url.endsWith(".awv"))) { // 只把音乐添加到集合当中
+                musicAmount++;
+            }
+        }
+        if (!cursor.isClosed()) {
+            cursor.close();
+        }
+        return Integer.toString(musicAmount);
     }
 }

@@ -1,11 +1,11 @@
-package com.app.music.frame.center;
+package com.app.music.ui.center;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.music.frame.base.BaseFragment;
+import com.app.music.ui.base.BaseFragment;
 
 import cn.com.acoe.app.music.R;
 

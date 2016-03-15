@@ -1,4 +1,4 @@
-package com.app.music.frame.media;
+package com.app.music.ui.media;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 import com.app.music.adapter.MediaBillboardAdapter;
 import com.app.music.app.AppContext;
-import com.app.music.frame.base.BaseFragment;
+import com.app.music.ui.base.BaseFragment;
 import com.app.music.view.AdViewPager;
 import com.app.music.view.SearchEditText;
 
@@ -51,7 +51,7 @@ public class MediaFragment extends BaseFragment {
         llOval = (LinearLayout) context.findViewById(R.id.media_oval_ll);
         int[] ids = new int[] { R.drawable.load_default_icon, R.drawable.center_tob_bg, R.drawable.load_default_icon, R.drawable.center_tob_bg };
         // 初始化广告pager
-        adViewPager.start(AppContext.appContext, null, ids, 3000, llOval, R.drawable.oval_focus_icon, R.drawable.oval_normal_icon);
+        adViewPager.start(AppContext.appContext, null, ids, 5000, llOval, R.drawable.oval_focus_icon, R.drawable.oval_normal_icon);
         // 初始化列表
         adapter = new MediaBillboardAdapter();
         listView.setAdapter(adapter);

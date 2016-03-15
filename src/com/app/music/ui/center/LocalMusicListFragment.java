@@ -1,17 +1,16 @@
-package com.app.music.frame.center;
+package com.app.music.ui.center;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.app.music.adapter.LocalMusicListAdapter;
 import com.app.music.common.SystemUtils;
 import com.app.music.entity.Mp3Bean;
-import com.app.music.frame.base.BaseFragment;
+import com.app.music.ui.base.BaseFragment;
 import com.app.music.manager.LocalMusicDataMgr;
 import com.app.music.view.SideBar;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;

@@ -6,24 +6,18 @@
         android:id="@+id/local_music_play_control_rl"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_30"
-        android:background="@android:color/black">
+        android:background="@color/black_color">
 
         <TextView
             android:id="@+id/local_music_play_mode_txt"
             style="@style/normal_text_style"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:drawableRight="@drawable/play_mode_random"
+            android:drawablePadding="5dip"
             android:textColor="@android:color/white"
             android:text="随机播放全部"/>
-
-        <ImageView
-            android:id="@+id/local_music_paly_mode_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/local_music_play_mode_txt"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/play_mode_random"/>
 
     </RelativeLayout>
 

@@ -1,4 +1,4 @@
-package com.app.music.frame.base;
+package com.app.music.ui.base;
 
 import android.view.View;
 import android.widget.Button;
