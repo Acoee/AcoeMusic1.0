@@ -2,6 +2,7 @@
 <resources>
     <!-- 主色调 -->
     <color name="main_color">#80c014</color>
+    <color name="main_pressed_color">#41610a</color>
     <color name="main_bg_color">#f0f0f0</color>
     <!-- 输入框相关 -->
     <color name="edittext_color">#666666</color>

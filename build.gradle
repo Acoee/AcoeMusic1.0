@@ -1,6 +1,9 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven{
+            url''
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
@@ -9,13 +12,13 @@ buildscript {
 apply plugin: 'android'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
+    compile fileTree(include: '*.jar', dir: 'libs')
     compile project(':libraries:pull_to_refresh_library')
 }
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
 
     compileOptions {
     }

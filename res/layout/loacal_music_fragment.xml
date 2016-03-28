@@ -25,7 +25,6 @@
         android:id="@+id/local_music_list"
         style="@style/pull_listview_style"
         android:layout_below="@+id/local_music_play_control_rl"
-        android:layout_marginRight="35dp"
         android:divider="@color/line_color"
         android:dividerHeight="1px"
         android:listSelector="@drawable/white_button_style" />

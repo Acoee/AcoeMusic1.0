@@ -2,7 +2,6 @@ package com.app.music.common;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.Media;
 
 import com.app.music.entity.Mp3Bean;

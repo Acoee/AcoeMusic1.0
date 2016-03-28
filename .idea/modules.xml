@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndFix/AndFix.iml" filepath="$PROJECT_DIR$/AndFix/AndFix.iml" />
       <module fileurl="file://$PROJECT_DIR$/acoe_music_r.iml" filepath="$PROJECT_DIR$/acoe_music_r.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/pull_to_refresh_library/pull_to_refresh_library.iml" filepath="$PROJECT_DIR$/libraries/pull_to_refresh_library/pull_to_refresh_library.iml" />

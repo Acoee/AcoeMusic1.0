@@ -8,7 +8,6 @@ import com.app.music.entity.QQMusicBean;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 
 /**
  * 腾讯音乐请求接口

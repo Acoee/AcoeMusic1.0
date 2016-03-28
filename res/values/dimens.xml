@@ -35,6 +35,7 @@
     <dimen name="dimen_33">33dp</dimen>
     <dimen name="dimen_34">34dp</dimen>
     <dimen name="dimen_35">35dp</dimen>
+    <dimen name="dimen_36">36dp</dimen>
 
     <!-- 标题相关 -->
     <dimen name="title_height">50dip</dimen>

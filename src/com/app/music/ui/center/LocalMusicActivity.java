@@ -45,6 +45,9 @@ public class LocalMusicActivity extends BaseTitleFragmentActivity implements Vie
     }
 
     private void initUI() {
+        // 设置标题
+        setRightButtonVisible(View.GONE);
+        setTitleText("本地音乐");
         // 初始化控件
         this.llNavContainer = (LinearLayout) findViewById(R.id.local_music_top_nav_ll);
         this.txtNavMusic = (TextView) findViewById(R.id.local_music_nav_music_txt);

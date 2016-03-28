@@ -76,8 +76,8 @@ public class SearchEditText extends EditText implements OnFocusChangeListener, O
 		} else {
 			drawableDelPressed = getResources().getDrawable(R.drawable.edit_delete_pressed_icon);
 		}
-		if (array.hasValue(R.styleable.SearchEditText_searchIcon)) {
-			drawableLeft = array.getDrawable(R.styleable.SearchEditText_searchIcon);
+		if (array.hasValue(R.styleable.SearchEditText_searchInIcon)) {
+			drawableLeft = array.getDrawable(R.styleable.SearchEditText_searchInIcon);
 		} else {
 			drawableLeft = getResources().getDrawable(R.drawable.edit_search_icon);
 		}

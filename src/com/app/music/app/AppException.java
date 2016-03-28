@@ -12,8 +12,6 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Date;
 
-import org.apache.http.HttpException;
-
 import com.app.music.common.mail.MailSenderInfo;
 import com.app.music.common.mail.SimpleMailSender;
 import com.app.music.ui.start.StartActivity;
@@ -149,9 +147,9 @@ public class AppException extends Exception implements UncaughtExceptionHandler 
 		if(e instanceof UnknownHostException || e instanceof ConnectException){
 			return new AppException(TYPE_NETWORK, 0, e);
 		}
-		else if(e instanceof HttpException){
+		/*else if(e instanceof HttpException){
 			return http(e);
-		}
+		}*/
 		else if(e instanceof SocketException){
 			return socket(e);
 		}

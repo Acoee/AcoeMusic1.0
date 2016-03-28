@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 自定义输入框（带删除按钮）样式 -->
+    <declare-styleable name="MyEditView">
+        <!-- 输入框背景色 -->
+        <attr name="edtBg" format="reference|color" />
+        <!-- 输入框字体大小 -->
+        <attr name="edtTextSize" format="dimension" />
+        <!-- 输入框字体颜色 -->
+        <attr name="edtTextContentColor" format="reference|color" />
+        <!-- 输入框Hint字体颜色 -->
+        <attr name="edtTextHintColor" format="reference|color" />
+        <!-- 标题内容 -->
+        <attr name="edtTextContent" format="string" />
+        <!-- 输入框内容 -->
+        <attr name="edtTitle" format="string" />
+        <!-- 输入框字Hint -->
+        <attr name="edtTextHint" format="string" />
+        <!-- 输入框是否可编辑 -->
+        <attr name="edtEditable" format="boolean" />
+        <!-- 输入框是否单行 -->
+        <attr name="edtSingleLine" format="boolean" />
+        <!-- 输入框输入类型 -->
+        <attr name="edtInputType">
+            <flag name="password" value="0x0" />
+            <flag name="phone" value="0x1" />
+            <flag name="number" value="0x2" />
+            <flag name="numberDecimal" value="0x3" />
+        </attr>
+        <!-- 输入框字type类型 -->
+        <attr name="edtType" format="string" />
+    </declare-styleable>
     <!-- 圆形图片控件 -->
     <declare-styleable name="CircleImageView">
         <attr name="border_width" format="dimension" />
@@ -28,6 +58,6 @@
         <!-- 删除按钮 -->
         <attr name="delNormalIcon" format="reference" />
         <!-- 搜索图标 -->
-        <attr name="searchIcon" format="reference" />
+        <attr name="searchInIcon" format="reference" />
     </declare-styleable>
 </resources>
