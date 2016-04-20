@@ -56,6 +56,7 @@ public class MainActivity extends BaseTitleFragmentActivity implements View.OnCl
     private void initUI() {
         // 设置标题
         this.setBackButtonVisible(View.GONE);
+        this.setRightButtonVisible(View.VISIBLE);
         this.setRightButtonClicklistener(this);
         // 初始化动画
         this.animPlaying = (AnimationDrawable) getRightButton().getBackground();

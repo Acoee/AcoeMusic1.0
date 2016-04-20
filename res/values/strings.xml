@@ -18,6 +18,14 @@
     <string name="number_1">01</string>
     <string name="duration_text">5:29</string>
     <string name="search_text">搜索</string>
+    <string name="login_text">登录</string>
+    <string name="nick_name_text">昵称</string>
+    <string name="gender_text">性别</string>
+    <string name="male_text">男</string>
+    <string name="famle_text">女</string>
+    <string name="signature_text">签名</string>
+    <string name="level_text">等级</string>
+    <string name="play_text">播放</string>
     <!-- 主界面标题 -->
     <string name="main_title_center_text">个人中心</string>
     <string name="main_title_current_text">当前歌曲</string>

@@ -71,6 +71,14 @@ public class BaseTitleActivity extends BaseActivity {
 		this.btnRight.setVisibility(visiblity);
 	}
 
+	/**
+	 * 设置返回按钮点击事件
+	 * @param backClickListener
+	 */
+	protected void setBackClickListener(OnClickListener backClickListener) {
+		this.btnBack.setOnClickListener(backClickListener);
+	}
+
 	// 返回按钮点击事件
 	private OnClickListener backClickListener = new OnClickListener() {
 		@Override

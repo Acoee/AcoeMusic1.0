@@ -1,6 +1,7 @@
 package com.app.music.ui.center;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,15 +13,19 @@ import android.widget.TextView;
 import com.app.music.app.AppContext;
 import com.app.music.common.BitmapManager;
 import com.app.music.common.SystemUtils;
-import com.app.music.entity.user.UserBean;
+import com.app.music.common.URLs;
+import com.app.music.entity.user.UserInfo;
 import com.app.music.manager.LocalMusicDataMgr;
 import com.app.music.ui.base.BaseFragment;
 import com.app.music.ui.start.LoginActivity;
 import com.fortysevendeg.swipelistview.SwipeListView;
 
+import java.util.List;
+
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.listener.GetListener;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.listener.FindListener;
 import cn.com.acoe.app.music.R;
 
 /**用户个人中心界面
@@ -36,7 +41,7 @@ public class CenterFragment extends BaseFragment implements View.OnClickListener
     private SwipeListView userMusicList;
     private ImageView imgUserPhoto;
     // 数据
-    private UserBean nowUser; // 当前用户
+    private UserInfo userInfo; // 当前用户信息
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,7 +52,7 @@ public class CenterFragment extends BaseFragment implements View.OnClickListener
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        Bmob.initialize(context, "c5c2a5a9fe8d7d54dc71cbbb37a6b6d2");
+        Bmob.initialize(context, URLs.BOMB_APP_KEY);
         if (rlLocalMusic == null) initUI();
         login();
         loadData();
@@ -58,6 +63,7 @@ public class CenterFragment extends BaseFragment implements View.OnClickListener
      */
     private void initUI() {
         localMusicDataMgr = new LocalMusicDataMgr(this);
+        bitmapManager = new BitmapManager(AppContext.appContext, BitmapFactory.decodeResource(AppContext.appContext.getResources(), R.drawable.default_user_photo));
         // 初始化控件
     	this.rlLocalMusic = (RelativeLayout) this.context.findViewById(R.id.user_local_music_rl);
         this.rlFavoriteMusic = (RelativeLayout) this.context.findViewById(R.id.user_favorite_music_rl);
@@ -97,12 +103,23 @@ public class CenterFragment extends BaseFragment implements View.OnClickListener
                 break;
             case R.id.user_center_photo_imageview:
                 if (AppContext.isLogined) {
-                    // TODO
+                    Intent intent = new Intent(context, UserInfoActivity.class);
+                    intent.putExtra("userInfo", userInfo);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right);
                 } else {
                     Intent intent = new Intent(context, LoginActivity.class);
-                    startActivity(intent);
+                    startActivityForResult(intent, 1111);
                 }
                 break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1111 && resultCode == 1111) {
+            login();
         }
     }
 
@@ -110,36 +127,34 @@ public class CenterFragment extends BaseFragment implements View.OnClickListener
      * 用户登录
      */
     private void login() {
+        BmobUser bmobUser = BmobUser.getCurrentUser(context);
+        if (bmobUser != null) {
+            final String username = bmobUser.getUsername();
+            AppContext.isLogined = true;
+            BmobQuery<UserInfo> userInfoQuery = new  BmobQuery<UserInfo>();
+            userInfoQuery.addWhereEqualTo("username", username);
+            userInfoQuery.findObjects(context, new FindListener<UserInfo>() {
+               @Override
+               public void onSuccess(List<UserInfo> list) {
+                   userInfo = list.get(0);
+                   bitmapManager.loadBitmap(userInfo.photoUrl, imgUserPhoto);
+                   txtUserName.setText(userInfo.nickName);
+                   if ("男".equals(userInfo.gender)) {
+                       txtUserName.setCompoundDrawables(null, null, getResources().getDrawable(R.drawable.user_gender_male), null);
+                   } else {
+                       txtUserName.setCompoundDrawables(null, null, getResources().getDrawable(R.drawable.user_gender_female), null);
+                   }
+                   txtUserSignature.setText(userInfo.signature);
+                   txtRecordInfo.setText("等级    " + userInfo.memberLevel + "级  |  播放    " + userInfo.listenAmount); // 等级    0级  |  播放    102
+               }
 
-        if (AppContext.isLogined) {
-            nowUser = AppContext.loginUser;
-            BmobQuery<UserBean> result = new BmobQuery<UserBean>();
-            result.getObject(context, nowUser.getObjectId(), new GetListener<UserBean>() {
-                @Override
-                public void onSuccess(UserBean userBean) {
-                    bitmapManager.loadBackgroundBitmap(nowUser.photoUrl, imgUserPhoto);
-                    txtUserName.setText(nowUser.userName);
-                    if ("男".equals(nowUser.gender)) {
-                        txtUserName.setCompoundDrawables(null, null, getResources().getDrawable(R.drawable.user_gender_male), null);
-                    } else {
-                        txtUserName.setCompoundDrawables(null, null, getResources().getDrawable(R.drawable.user_gender_female), null);
-                    }
-                    txtUserSignature.setText(nowUser.signature);
-                    txtRecordInfo.setText("等级    " + nowUser.memberLevel + "级  |  播放    " + nowUser.listenAmount); // 等级    0级  |  播放    102
-                }
-
-                @Override
-                public void onFailure(int i, String s) {
-                    SystemUtils.ToastShow("登录失败，请重新登录", false, getUserVisibleHint());
-                    imgUserPhoto.setBackgroundResource(R.drawable.default_user_photo);
-                    txtUserName.setText("还未登录喔~");
-                    txtUserName.setCompoundDrawables(null, null, null, null);
-                    txtUserSignature.setText("");
-                    txtRecordInfo.setText("等级    0级");
-                }
+               @Override
+               public void onError(int i, String s) {
+                   SystemUtils.ToastShow(s, false, getUserVisibleHint());
+               }
             });
         } else {
-            imgUserPhoto.setBackgroundResource(R.drawable.default_user_photo);
+            imgUserPhoto.setImageResource(R.drawable.default_user_photo);
             txtUserName.setText("还未登录喔~");
             txtUserName.setCompoundDrawables(null, null, null, null);
             txtUserSignature.setText("");

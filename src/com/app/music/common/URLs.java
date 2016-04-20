@@ -7,6 +7,7 @@ public class URLs {
 	
 	public final static String IP = "xxxx.com";
 	public final static String HOST = HTTP + IP; //生产环境主机地址
+	public final static String BOMB_APP_KEY = "c5c2a5a9fe8d7d54dc71cbbb37a6b6d2";
 
 	public static class TecentMusic {
 		public final static String HOST = "http://music.qq.com/musicbox/shop/v3/data/hit/";

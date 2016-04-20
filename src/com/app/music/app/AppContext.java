@@ -2,17 +2,12 @@ package com.app.music.app;
 
 import com.app.music.db.base.AssistantDatabaseHelper;
 import com.app.music.entity.Mp3Bean;
-import com.app.music.entity.user.UserBean;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.SharedPreferences;
-
 import java.util.ArrayList;
 
 public class AppContext extends Application {
 	public static AppContext appContext;
-	public static UserBean loginUser; // 登录用户的信息
 	public static boolean isLogined;
 	public static ArrayList<Mp3Bean> datas;
 	

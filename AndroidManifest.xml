@@ -43,6 +43,11 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- 用户资料 -->
+        <activity android:name="com.app.music.ui.center.UserInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
         <!-- 本地音乐列表界面 -->
         <activity
             android:name="com.app.music.ui.center.LocalMusicActivity"

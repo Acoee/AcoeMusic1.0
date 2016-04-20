@@ -50,7 +50,6 @@ public class AllSongBillboardActivity extends BaseTitleActivity {
         musicDataMgr = new TecentMusicDataMgr(this);
         // 设置标题
         setTitleText("总歌榜");
-        setRightButtonVisible(View.GONE);
         // 控件
         imgAlbum = (ImageView) findViewById(R.id.album_imageview);
         listView = (PullToRefreshListView) findViewById(R.id.listview);

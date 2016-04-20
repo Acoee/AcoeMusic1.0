@@ -109,4 +109,15 @@
         <item name="cn.com.acoe.app.music:ptrMode">both</item>
         <item name="android:overScrollMode">always</item>
     </style>
+
+    <!-- 按钮样式 -->
+    <style name="parent_button_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/main_button_height</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/main_button_text_size</item>
+    </style>
+    <style name="main_button_style" parent="@style/parent_button_style">
+        <item name="android:background">@drawable/main_button_style</item>
+    </style>
 </resources>
