@@ -26,6 +26,7 @@
     <string name="signature_text">签名</string>
     <string name="level_text">等级</string>
     <string name="play_text">播放</string>
+    <string name="loginout_text">退出登录</string>
     <!-- 主界面标题 -->
     <string name="main_title_center_text">个人中心</string>
     <string name="main_title_current_text">当前歌曲</string>

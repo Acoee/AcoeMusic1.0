@@ -105,7 +105,7 @@ public class CenterFragment extends BaseFragment implements View.OnClickListener
                 if (AppContext.isLogined) {
                     Intent intent = new Intent(context, UserInfoActivity.class);
                     intent.putExtra("userInfo", userInfo);
-                    startActivity(intent);
+                    startActivityForResult(intent, 1111);
                     getActivity().overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right);
                 } else {
                     Intent intent = new Intent(context, LoginActivity.class);
